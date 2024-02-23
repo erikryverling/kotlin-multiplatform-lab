@@ -1,0 +1,6 @@
+#!/bin/sh
+cd KotlinMultiplatformNoUi
+./gradlew dependencyUpdates
+cd ..
+cd KotlinMultiplatformUI
+./gradlew dependencyUpdates
