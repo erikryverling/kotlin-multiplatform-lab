@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.androidLibrary)
+    id("com.android.library")
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.skie)
 }
@@ -8,7 +8,9 @@ plugins {
 kotlin {
     androidTarget {
         compilations.all {
+            @Suppress("DEPRECATION")
             kotlinOptions {
+                // This need to be 1.8 for some reason...
                 jvmTarget = "1.8"
             }
         }
@@ -38,6 +40,7 @@ kotlin {
             androidMain.dependencies {
                 implementation(libs.ktor.client.android)
             }
+
             iosMain.dependencies {
                 implementation(libs.ktor.client.darwin)
             }
@@ -47,8 +50,9 @@ kotlin {
 
 android {
     namespace = "se.yverling.lab.kmp.noui.shared"
-    compileSdk = libs.versions.android.compileSdk.get().toInt()
+    compileSdk = Versions.compileSdk
+
     defaultConfig {
-        minSdk = libs.versions.android.minSdk.get().toInt()
+        minSdk = Versions.minSdk
     }
 }

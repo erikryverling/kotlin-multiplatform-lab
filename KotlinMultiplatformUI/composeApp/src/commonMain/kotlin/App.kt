@@ -1,4 +1,3 @@
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -14,7 +13,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.datetime.*
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.painterResource
 
 data class Country(val name: String, val zone: TimeZone, val image: String)
@@ -36,7 +34,6 @@ fun countries() = listOf(
     Country("Egypt", TimeZone.of("Africa/Cairo"), "eg.png")
 )
 
-@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App(countries: List<Country> = countries()) {
     MaterialTheme {
@@ -63,11 +60,12 @@ fun App(countries: List<Country> = countries()) {
                             }
                         ) {
                             Row(verticalAlignment = Alignment.CenterVertically) {
-                                Image(
-                                    painterResource(image),
-                                    modifier = Modifier.size(50.dp).padding(end = 10.dp),
-                                    contentDescription = "$name flag"
-                                )
+                                // TODO The API seems to have changed here...
+//                                Image(
+//                                    painterResource(image),
+//                                    modifier = Modifier.size(50.dp).padding(end = 10.dp),
+//                                    contentDescription = "$name flag"
+//                                )
                                 Text(name)
                             }
                         }
@@ -76,7 +74,7 @@ fun App(countries: List<Country> = countries()) {
             }
 
             Button(modifier = Modifier.padding(start = 20.dp, top = 10.dp),
-                   onClick = { showCountries = !showCountries }) {
+                onClick = { showCountries = !showCountries }) {
                 Text("Select Location")
             }
         }
