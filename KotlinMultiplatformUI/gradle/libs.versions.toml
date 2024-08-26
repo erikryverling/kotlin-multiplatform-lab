@@ -1,19 +1,20 @@
 [versions]
 
 # Global
-kotlin = "2.0.0"
+# This need to be in sync with Skie
+kotlin = "2.0.10"
 
 # Plugins
-kotlin-dsl-plugin = "4.3.0"
+kotlin-dsl-plugin = "4.5.0"
 # Check minimum supported by KMM
 android-plugin = "8.3.2"
-compose-plugin = "1.6.10"
+compose-plugin = "1.6.11"
 versions-plugin = "0.51.0"
 
 # Libraries
-activity-compose = "1.9.0"
-compose = "1.6.7"
-kotlinx-datetime = "0.6.0"
+activity-compose = "1.9.1"
+compose = "1.6.8"
+kotlinx-datetime = "0.6.1"
 
 
 [plugins]

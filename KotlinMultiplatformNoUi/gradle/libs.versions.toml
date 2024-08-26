@@ -7,7 +7,7 @@ kotlin = "2.0.10"
 # Plugins
 kotlin-dsl-plugin = "4.5.0"
 # Check minimum supported by KMM
-android-plugin = "8.3.2"
+android-plugin = "8.5.2"
 compose-plugin = "1.6.11"
 skie-plugin = "0.8.4"
 versions-plugin = "0.51.0"
@@ -16,7 +16,7 @@ versions-plugin = "0.51.0"
 compose = "1.6.8"
 activity-compose = "1.9.1"
 # This need to be in sync with rest of Compose
-androidx-lifecycle = "2.7.0"
+androidx-lifecycle = "2.8.4"
 kotlinx-coroutines-core = "1.8.1"
 kotlinx-datetime = "0.6.1"
 ktor = "2.3.12"
