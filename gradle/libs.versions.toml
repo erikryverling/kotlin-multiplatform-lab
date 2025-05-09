@@ -1,0 +1,51 @@
+[versions]
+
+# Global
+# This need to be in sync with Skie
+kotlin = "2.1.10"
+
+# Plugins
+kotlin-dsl-plugin = "5.2.0"
+android-plugin = "8.6.1"
+skie-plugin = "0.10.1"
+
+# Libraries
+kotlinx-coroutines-core = "1.10.1"
+
+ktor = "3.1.2"
+
+compose-bom = "2025.05.00"
+compose-activity = "1.10.1"
+compose-lifecycle = "2.9.0"
+
+[plugins]
+kotlin-dsl = { id = "org.gradle.kotlin.kotlin-dsl", version.ref = "kotlin-dsl-plugin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android = { id = "com.android.application", version.ref = "android-plugin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+skie = { id = "co.touchlab.skie", version.ref = "skie-plugin" }
+
+[libraries]
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+
+# https://developer.android.com/develop/ui/compose/bom/bom-mapping
+compose-bom = { module = "androidx.compose:compose-bom", version.ref = "compose-bom" }
+compose-tooling = { module = "androidx.compose.ui:ui-tooling" }
+compose-material = { module = "androidx.compose.material3:material3" }
+compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
+compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "compose-lifecycle" }
+
+[bundles]
+compose = [
+    "compose-activity",
+    "compose-material",
+    "compose-tooling",
+    "compose-viewmodel",
+]
