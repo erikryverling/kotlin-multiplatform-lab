@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.android)
+    alias(libs.plugins.android.application)
 }
 
 kotlin {
@@ -14,19 +14,19 @@ kotlin {
     }
 
     sourceSets {
+        commonMain.dependencies {
+            implementation(projects.shared)
+        }
+
         androidMain.dependencies {
             implementation(project.dependencies.platform(libs.compose.bom))
             implementation(libs.bundles.compose)
-        }
-
-        commonMain.dependencies {
-            implementation(projects.shared)
         }
     }
 }
 
 android {
-    namespace = "se.yverling.lab.kmp"
+    namespace = "se.yverling.lab.kmp.app"
     compileSdk = Versions.compileSdk
 
     defaultConfig {

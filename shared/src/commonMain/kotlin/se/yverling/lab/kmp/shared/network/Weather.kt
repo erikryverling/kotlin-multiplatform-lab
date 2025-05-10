@@ -10,20 +10,12 @@ import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import kotlin.math.roundToInt
 
-private const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
-
-internal const val LONGITUDE = 18.0273F
-internal const val LATITUDE = 59.303F
-internal const val UNITS = "metric"
-internal const val LANGUAGE_CODE = "sv"
-
 internal class Weather {
     private val httpClient = HttpClient {
         install(ContentNegotiation) {
-            json(Json {
-                ignoreUnknownKeys = true
-            })
+            json(Json { ignoreUnknownKeys = true })
         }
+
         defaultRequest {
             url(BASE_URL)
         }
@@ -36,7 +28,7 @@ internal class Weather {
             longitude = LONGITUDE,
             latitude = LATITUDE,
             units = UNITS,
-            languageCode = LANGUAGE_CODE
+            languageCode = LANGUAGE_CODE,
         )
 
         return if (response.status.value in success()) "${getTemp(response)} ° C"
@@ -57,6 +49,14 @@ internal class Weather {
             parameters.append("units", units)
             parameters.append("lang", languageCode)
         }
+    }
+
+    private companion object {
+        const val BASE_URL = "https://api.openweathermap.org/data/2.5/"
+        const val LONGITUDE = 18.0273F
+        const val LATITUDE = 59.303F
+        const val UNITS = "metric"
+        const val LANGUAGE_CODE = "sv"
     }
 }
 
