@@ -8,6 +8,7 @@ import io.ktor.client.request.get
 import io.ktor.client.statement.HttpResponse
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import se.yverling.lab.kmp.shared.OpenWeatherMapApiKey
 import kotlin.math.roundToInt
 
 internal class Weather {
@@ -23,8 +24,7 @@ internal class Weather {
 
     suspend fun getTemperature(): String {
         val response = getCurrentWeather(
-            // TODO Provide this through local resources somehow...
-            apiKey = "",
+            apiKey = OpenWeatherMapApiKey.key,
             longitude = LONGITUDE,
             latitude = LATITUDE,
             units = UNITS,

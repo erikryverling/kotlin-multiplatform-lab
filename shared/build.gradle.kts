@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     alias(libs.plugins.kotlin.serialization)
@@ -49,6 +50,16 @@ android {
 
     defaultConfig {
         minSdk = Versions.minSdk
+
+        val properties = Properties()
+        properties.load(rootProject.file("local.properties").inputStream())
+        val openWeatherMapApiKey = properties.getProperty("openWeatherMapApiKey")
+
+        buildConfigField("String", "openWeatherMapApiKey", openWeatherMapApiKey)
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     compileOptions {
