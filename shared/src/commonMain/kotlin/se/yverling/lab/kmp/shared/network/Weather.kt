@@ -6,6 +6,7 @@ import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.request.get
 import io.ktor.client.statement.HttpResponse
+import io.ktor.http.isSuccess
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import se.yverling.lab.kmp.shared.OpenWeatherMapApiKey
@@ -31,7 +32,7 @@ internal class Weather {
             languageCode = LANGUAGE_CODE,
         )
 
-        return if (response.status.value in success()) "${getTemp(response)} ° C"
+        return if (response.status.isSuccess()) "${getTemp(response)} ° C"
         else "Something went wrong"
     }
 
@@ -60,5 +61,4 @@ internal class Weather {
     }
 }
 
-private fun success() = 200..299
 private suspend fun getTemp(response: HttpResponse): String = response.body<CurrentWeatherDto>().main.temp.roundToInt().toString()
