@@ -9,10 +9,12 @@ import io.ktor.client.statement.HttpResponse
 import io.ktor.http.isSuccess
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
+import me.tatarka.inject.annotations.Inject
 import se.yverling.lab.kmp.shared.OpenWeatherMapApiKey
 import kotlin.math.roundToInt
 
-internal class Weather {
+@Inject
+class Weather {
     private val httpClient = HttpClient {
         install(ContentNegotiation) {
             json(Json { ignoreUnknownKeys = true })

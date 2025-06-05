@@ -2,12 +2,14 @@
 
 # Global
 # This need to be in sync with Skie
-kotlin = "2.1.10"
+kotlin = "2.1.21"
 
 # Plugins
 kotlin-dsl-plugin = "5.2.0"
 android-plugin = "8.10.0"
-skie-plugin = "0.10.1"
+kotlin-inject-runtime-kmp = "0.7.2"
+skie-plugin = "0.10.2"
+ksp-plugin = "2.1.21-2.0.1"
 
 # Libraries
 kotlinx-coroutines-core = "1.10.1"
@@ -26,9 +28,13 @@ android-application = { id = "com.android.application", version.ref = "android-p
 android-library = { id = "com.android.library", version.ref = "android-plugin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 skie = { id = "co.touchlab.skie", version.ref = "skie-plugin" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp-plugin" }
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines-core" }
+
+kotlinInject-runtime = { module = "me.tatarka.inject:kotlin-inject-runtime-kmp", version.ref = "kotlin-inject-runtime-kmp" }
+kotlinInject-compiler = { module = "me.tatarka.inject:kotlin-inject-compiler-ksp", version.ref = "kotlin-inject-runtime-kmp" }
 
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
 ktor-client-contentNegotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
