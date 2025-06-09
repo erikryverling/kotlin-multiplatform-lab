@@ -12,8 +12,6 @@ object Messages {
     fun asFlow() = flow {
         emit("Welcome to ${platform.name}")
         delay(1.seconds)
-        emit("Here's the current temperature")
-        delay(1.seconds)
-        emit(weather.getTemperature())
+        emit("Here's the current temperature: ${weather.getTemperature()}")
     }
 }
