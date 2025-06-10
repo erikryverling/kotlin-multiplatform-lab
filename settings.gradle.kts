@@ -2,6 +2,7 @@ rootProject.name = "kotlin-multiplatform-lab"
 
 include(
     ":androidApp",
+    ":feature:shared",
     ":shared",
 )
 
