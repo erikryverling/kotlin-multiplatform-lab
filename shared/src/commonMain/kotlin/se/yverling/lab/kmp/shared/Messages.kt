@@ -10,8 +10,8 @@ object Messages {
     private val weather = Weather()
 
     fun asFlow() = flow {
-        emit("Welcome to ${platform.name}")
+        emit("${platform.prefix} ${platform.name}")
         delay(1.seconds)
-        emit("Here's the current temperature: ${weather.getTemperature()}")
+        emit("Current temperature: ${weather.getTemperature()}")
     }
 }

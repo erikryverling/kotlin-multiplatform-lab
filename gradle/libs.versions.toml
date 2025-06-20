@@ -2,21 +2,21 @@
 
 # Global
 # This need to be in sync with Skie
-kotlin = "2.1.10"
+kotlin = "2.1.21"
 
 # Plugins
-kotlin-dsl-plugin = "5.2.0"
-android-plugin = "8.10.0"
-skie-plugin = "0.10.1"
+kotlin-dsl-plugin = "6.1.2"
+android-plugin = "8.10.1"
+skie-plugin = "0.10.2"
 
 # Libraries
-kotlinx-coroutines-core = "1.10.1"
+kotlinx-coroutines-core = "1.10.2"
 
-ktor = "3.1.2"
+ktor = "3.2.0"
 
-compose-bom = "2025.05.00"
+compose-bom = "2025.06.01"
 compose-activity = "1.10.1"
-compose-lifecycle = "2.9.0"
+compose-lifecycle = "2.9.1"
 
 [plugins]
 kotlin-dsl = { id = "org.gradle.kotlin.kotlin-dsl", version.ref = "kotlin-dsl-plugin" }
@@ -42,6 +42,8 @@ compose-tooling = { module = "androidx.compose.ui:ui-tooling" }
 compose-material = { module = "androidx.compose.material3:material3" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "compose-activity" }
 compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "compose-lifecycle" }
+
+kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 
 [bundles]
 compose = [

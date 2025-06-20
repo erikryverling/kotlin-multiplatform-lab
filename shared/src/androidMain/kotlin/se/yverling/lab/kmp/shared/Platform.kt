@@ -1,9 +1,8 @@
 package se.yverling.lab.kmp.shared
 
-import android.os.Build
-
 class AndroidPlatform : Platform {
-    override val name: String = "Android ${Build.VERSION.SDK_INT}"
+    override val prefix: String = "Platform: "
+    override val name: String = "Android"
 }
 
 actual fun getPlatform(): Platform = AndroidPlatform()
