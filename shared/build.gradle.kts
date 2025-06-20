@@ -34,6 +34,10 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
         }
 
+        commonTest.dependencies {
+            implementation(libs.kotlin.test)
+        }
+
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
         }

@@ -2,7 +2,7 @@ package se.yverling.lab.kmp.shared
 
 import platform.UIKit.UIDevice.Companion.currentDevice
 
-class IOSPlatform : Platform {
+class IosPlatform : Platform {
     override val name: String = buildString {
         append(currentDevice.systemName())
         append(" ")
@@ -10,4 +10,4 @@ class IOSPlatform : Platform {
     }
 }
 
-actual fun getPlatform(): Platform = IOSPlatform()
+actual fun getPlatform(): Platform = IosPlatform()
