@@ -5,19 +5,19 @@
 kotlin = "2.1.21"
 
 # Plugins
-kotlin-dsl-plugin = "6.1.2"
-android-plugin = "8.10.1"
-skie-plugin = "0.10.2"
-ktlint-plugin = "12.3.0"
+kotlin-dsl-plugin = "6.2.0"
+android-plugin = "8.12.2"
+skie-plugin = "0.10.6"
+ktlint-plugin = "13.1.0"
 
 # Libraries
 kotlinx-coroutines-core = "1.10.2"
 
-ktor = "3.2.0"
+ktor = "3.2.3"
 
-compose-bom = "2025.06.01"
+compose-bom = "2025.08.01"
 compose-activity = "1.10.1"
-compose-lifecycle = "2.9.1"
+compose-lifecycle = "2.9.3"
 
 [plugins]
 kotlin-dsl = { id = "org.gradle.kotlin.kotlin-dsl", version.ref = "kotlin-dsl-plugin" }
