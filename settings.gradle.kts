@@ -7,9 +7,9 @@ include(
 
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 

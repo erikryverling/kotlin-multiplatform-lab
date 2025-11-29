@@ -1,6 +1,6 @@
 [versions]
 
-# Global
+# Common
 # This need to be in sync with Skie
 kotlin = "2.2.21"
 
