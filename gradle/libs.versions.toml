@@ -2,21 +2,21 @@
 
 # Common
 # This need to be in sync with Skie
-kotlin = "2.2.21"
+kotlin = "2.3.10"
 
 # Plugins
-kotlin-dsl-plugin = "6.4.2"
-android-plugin = "8.13.1"
-skie-plugin = "0.10.8"
+kotlin-dsl-plugin = "6.5.2"
+android-plugin = "8.13.2"
+skie-plugin = "0.10.10"
 ktlint-plugin = "14.0.1"
 
 # Libraries
 kotlinx-coroutines-core = "1.10.2"
 
-ktor = "3.3.3"
+ktor = "3.4.0"
 
-compose-bom = "2025.11.01"
-compose-activity = "1.12.0"
+compose-bom = "2026.01.01"
+compose-activity = "1.12.4"
 compose-lifecycle = "2.10.0"
 
 [plugins]
