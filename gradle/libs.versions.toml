@@ -6,7 +6,7 @@ kotlin = "2.3.10"
 
 # Plugins
 kotlin-dsl-plugin = "6.5.2"
-android-plugin = "8.13.2"
+android-plugin = "8.13.2" # AGP 9.0.0 is documented but verification during build is recommended before upgrading to major versions
 skie-plugin = "0.10.10"
 ktlint-plugin = "14.0.1"
 
