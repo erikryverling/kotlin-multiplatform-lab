@@ -2,7 +2,7 @@
 
 # Common
 # This need to be in sync with Skie
-kotlin = "2.3.20"
+kotlin = "2.3.10"
 
 # Plugins
 kotlin-dsl-plugin = "6.5.6"
