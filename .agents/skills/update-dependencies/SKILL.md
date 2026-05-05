@@ -1,0 +1,34 @@
+---
+name: update-dependencies
+description: Updates the project dependencies
+---
+
+# Research new updates
+1. Use https://gradle.org to search for Gradle updates, including Gradle plugins
+2. Use https://mvnrepository.com to search for dependency updates
+3. Analyze libs.versions.toml and gradle-wrapper.properties
+
+# Update dependencies
+- Update all dependencies in libs.versions.toml and gradle-wrapper.properties
+- Always prefer stable version of dependencies, if possible
+- If Gradle fails to resolve newly released versions that are confirmed to exist, use the `--refresh-dependencies` flag (e.g., `./gradlew assembleDebug --refresh-dependencies`)
+- Add comments to libs.versions.toml on the versions you decide not to update with an explanation why
+
+# Verify upgrades
+1. Run ./gradlew assembleDebug and fix any compilation errors
+2. Run all tests with ./gradlew test. Fix any issues caused by failing tests. Never change the tests
+   themself.
+3. Verify app start(s)
+  - Start the Pixel_9_Pro_API_36 Android emulator
+  - Build the app with ./gradlew assembleDebug
+  - Install the build APK with adb install
+  - Verify the app is running and doesn't crash
+  - Start an iPhone 17 Pro simulator
+  - Install the iOS app on the simulator
+  - Verify that it starts and doesn't crash
+
+# Final step
+- Summerize all changes in libs.versions.toml and gradle-wrapper.properties and let the user approve them
+- When approved create a commit for the changes named "Update dependencies"
+- Push the changes
+
